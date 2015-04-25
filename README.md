@@ -1,2 +1,2 @@
 # prisoners-koth
-Iterated Prisoners Dilemma
+An evolutaionary approach to an iterated Prisoners Dilemma game
