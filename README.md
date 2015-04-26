@@ -30,15 +30,40 @@ Every player will have the opportunity to write and submit a strategy for their 
 To make a move, the prisoner will print either "D" or "C" to the console.  At every turn, your prisoner will be given at most 2 seconds to make a move. *Note - this should be plenty of time.*
 
 ## Examples
+Consider this base prisoner class.  It begins by reading in the number of rounds, prints it's first move, and then for each round played, it prints a move. 
+````java
+import java.util.Scanner;
+
+public class Prisoner_Base {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //Read in the number of rounds to be played
+        int numRounds = scanner.nextInt();
+        
+        System.out.println("first_move_here");  // Should be "C" or "D"
+        for (int i = 1; i < numRounds; i++) {
+            String prevMove = scanner.next();  // read in how your opponent played last round, "C" or "D"
+            // Your logic/strategy code here
+            System.out.println("move_here");  // Should be "C" or "D"
+        }
+        scanner.close();
+    }
+
+}
+````
 
 ## Strategies
 
 #### Always Defecting
-If your prisoner always defects, there is no payoff that allows the other person to score higher than you.  However, if the other person defects as well, you'll only recieve 1 point per round, and if any other player plays a different strategry, you'll be sure to be eliminated. 
+If your prisoner always defects, there is no payoff that allows the other person to score higher than you.  However, if the other person defects as well, you'll only recieve 1 point per round, and if any other player plays a different strategry, you'll be sure to be eliminated. For an example of this strategy, consult the prisoners folder. 
+
+#### Always Cooperating
+If your prisoner always cooperates, you guarantee yourself the best total payoff if you play yourself or if the other prisoner cooperates.  However, if your opponent sees your cooperation and decides to defect, you'll be left with 0 points.  Consult the prisoners folder for an example of this strategy. 
 
 #### Playing yourself
 Since it's more than likely that your prisoner will face off against a copy of itself, it is in your best interest to cooperate with yourself. However, you will have no way of knowing if you're facing off against a copy of yourself or another prisoner. As such, you may want to devise a way your prisoner can know that it's playing itself - i.e. playing cooperate on prime numbers, defecting on even numbered rounds, etc. 
 
-#### Changing Strategies
+#### Dynamically Changing Strategies
 Prisoners will first few games of the 100 played to determine what strategy their opponent is using to best exploit it. As such, changing your strategy randomly, or in accordance with what you think the opponent's strategy is will be in your best interest. 
 
