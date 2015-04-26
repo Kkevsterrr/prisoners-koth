@@ -1,5 +1,5 @@
 # Evolutationary Prisoners Dilemma
-An evolutaionary approach to an iterated prisoner's dilemma game. 
+An evolutaionary approach to an iterated <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">prisoner's dilemma game</a>.  This is a King of the Hill (KOTH) programming competition. 
 
 # The Story
 Two criminals robbed a bank and are captured, but refuse to speak to the police. Each prisoner is put in a separate cell and is each told by the police that they had two options. They could choose to stay silent (cooperating with their partner), or they could defect on their partner and rat them out.  If they both stayed silent, they would each recieve 5 years in prison, and if they each ratted each other out, they would recieve 15 years in prison. But if one prisoner rats on the other while the other stayed silent, the snitch would go free while the silent prisoner would get 20 years.  
@@ -16,7 +16,7 @@ As such, the best possible total outcome is if both players cooperate with one a
 Therefore, there is an incentive to defect on the other prisoner, as it gaurantees the best possible personal score.  However, if both defect, each player will recieve the worst score. There is also an incentive for both to cooperate, as that gives the best total score, but if the other player defects, the cooperating prisoner is left with nothing.  
 
 # The Game
-Every player will write the strategy of a prisoner for a <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">prisoner's dilemma game</a>. You will decide if your prisoner is to cooperate or to defect. 
+Every player will write the strategy of a prisoner for a <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">prisoner's dilemma game</a>. You will decide if your prisoner is to cooperate (C) or to defect (D). Your prisoner and a random other prisoner (potentially a copy of yourself) will face off 100 times, and the winner has the most points at the end of the round. 
 
 
 # Evolution
@@ -24,4 +24,5 @@ For every round, each player's prisoner will be spawned 100 times in the arena t
 
 For example, if two programs are spawned in an arena (100 copies each), and Prisoner1 scores a total of 750 points, and Prisoner2 scores only 250 points, the in the next round, Prisoner1 make up 75% of the spawned programs in the next round, or 150 programs, and Prisoner2 will only be spawned 50 copies.  This process will continue until Prisoner1 makes up 100% of the pool of programs and effectively kills off Prisoner2. 
 
+# Examples
 
