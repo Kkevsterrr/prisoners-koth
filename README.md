@@ -24,5 +24,12 @@ At the beginning of every round, 100 copies of every prisoner will be spawned in
 
 For example, if two programs are spawned in an arena (100 copies each), and Prisoner1 scores a total of 750 points, and Prisoner2 scores only 250 points, the in the next round, Prisoner1 make up 75% of the spawned programs in the next round, or 150 programs, and Prisoner2 will only be spawned 50 copies.  This process will continue until Prisoner1 makes up 100% of the pool of programs and effectively kills off Prisoner2. 
 
+# The Code
+Every player will have the opportunity to write and submit a strategy for their prisoner. Each prisoner strategy will be written in **Java**.  At the beginning of each round, a number will be automatically inputted (through System.in) to your program, telling you the number of rounds. You will print your starting move, and for every round after that, your opponent's previous move will be inputted (again through System.in) and must be read.  After you read your opponent's previous move, you have the opportunity to move. 
+
+To make a move, the prisoner will print either "D" or "C" to the console.  
+
 ## Examples
+
+## Strategies
 
