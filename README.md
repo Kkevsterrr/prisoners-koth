@@ -53,7 +53,7 @@ public class Prisoner_Base {
 }
 ````
 
-## Strategies
+## Common Strategies
 
 #### Always Defecting
 If your prisoner always defects, there is no payoff that allows the other person to score higher than you.  However, if the other person defects as well, you'll only recieve 1 point per round, and if any other player plays a different strategry, you'll be sure to be eliminated. For an example of this strategy, consult the prisoners folder. 
@@ -61,9 +61,12 @@ If your prisoner always defects, there is no payoff that allows the other person
 #### Always Cooperating
 If your prisoner always cooperates, you guarantee yourself the best total payoff if you play yourself or if the other prisoner cooperates.  However, if your opponent sees your cooperation and decides to defect, you'll be left with 0 points.  Consult the prisoners folder for an example of this strategy. 
 
-#### Playing yourself
+#### Smartly playing yourself
 Since it's more than likely that your prisoner will face off against a copy of itself, it is in your best interest to cooperate with yourself. However, you will have no way of knowing if you're facing off against a copy of yourself or another prisoner. As such, you may want to devise a way your prisoner can know that it's playing itself - i.e. playing cooperate on prime numbers, defecting on even numbered rounds, etc. 
 
 #### Dynamically Changing Strategies
-Prisoners will first few games of the 100 played to determine what strategy their opponent is using to best exploit it. As such, changing your strategy randomly, or in accordance with what you think the opponent's strategy is will be in your best interest. 
+Prisoners will first few games of the 100 played to determine what strategy their opponent is using to best exploit it. As such, changing your strategy randomly, or in accordance with what you think the opponent's strategy is will be in your best interest.
+
+# Submissions
+To submit, send your file to: *emailTBD*
 
