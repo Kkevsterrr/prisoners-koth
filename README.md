@@ -20,7 +20,7 @@ Every player will write the strategy of a prisoner for a <a href="https://en.wik
 
 
 ## Evolution
-For every round, each player's prisoner will be spawned 100 times in the arena to start. All programs will be randomly paired against one another, and play Prisoner's Dilemma 100 times. *Your program could be paired up with another copy of your program.* The percentage of total points that each prisoner's program recieves will determine it's representation in the next round.  This iteration continues round by round until every prisoner is killed off except the winner.
+At the beginning of every round, 100 copies of every prisoner will be spawned in the arena. All programs will be randomly paired against one another, and each pair will play Prisoner's Dilemma 100 times. *Your program could be paired up with another copy of your program.* The percentage of total points that each prisoner's program recieves will determine it's representation in the next round.  This iteration continues round by round until every prisoner is killed off except the winner.
 
 For example, if two programs are spawned in an arena (100 copies each), and Prisoner1 scores a total of 750 points, and Prisoner2 scores only 250 points, the in the next round, Prisoner1 make up 75% of the spawned programs in the next round, or 150 programs, and Prisoner2 will only be spawned 50 copies.  This process will continue until Prisoner1 makes up 100% of the pool of programs and effectively kills off Prisoner2. 
 
