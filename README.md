@@ -25,11 +25,20 @@ At the beginning of every round, 100 copies of every prisoner will be spawned in
 For example, if two programs are spawned in an arena (100 copies each), and Prisoner1 scores a total of 750 points, and Prisoner2 scores only 250 points, the in the next round, Prisoner1 make up 75% of the spawned programs in the next round, or 150 programs, and Prisoner2 will only be spawned 50 copies.  This process will continue until Prisoner1 makes up 100% of the pool of programs and effectively kills off Prisoner2. 
 
 # The Code
-Every player will have the opportunity to write and submit a strategy for their prisoner. Each prisoner strategy will be written in **Java**.  At the beginning of each round, a number will be automatically inputted (through System.in) to your program, telling you the number of rounds. You will print your starting move, and for every round after that, your opponent's previous move will be inputted (again through System.in) and must be read.  After you read your opponent's previous move, you have the opportunity to move. 
+Every player will have the opportunity to write and submit a strategy for their prisoner. Each prisoner strategy will be written in **Java**.  At the beginning of each round, a number will be automatically inputted (through System.in) to your program, telling you the number of rounds. You will print your starting move, and for every round after that, your opponent's previous move will be inputted (again through System.in) and must be read.  After you read your opponent's previous move, you have the opportunity to move. Consult the examples below for more information. 
 
-To make a move, the prisoner will print either "D" or "C" to the console.  
+To make a move, the prisoner will print either "D" or "C" to the console.  At every turn, your prisoner will be given at most 2 seconds to make a move. *Note - this should be plenty of time.*
 
 ## Examples
 
 ## Strategies
+
+#### Always Defecting
+If your prisoner always defects, there is no payoff that allows the other person to score higher than you.  However, if the other person defects as well, you'll only recieve 1 point per round, and if any other player plays a different strategry, you'll be sure to be eliminated. 
+
+#### Playing yourself
+Since it's more than likely that your prisoner will face off against a copy of itself, it is in your best interest to cooperate with yourself. However, you will have no way of knowing if you're facing off against a copy of yourself or another prisoner. As such, you may want to devise a way your prisoner can know that it's playing itself - i.e. playing cooperate on prime numbers, defecting on even numbered rounds, etc. 
+
+#### Changing Strategies
+Prisoners will first few games of the 100 played to determine what strategy their opponent is using to best exploit it. As such, changing your strategy randomly, or in accordance with what you think the opponent's strategy is will be in your best interest. 
 
