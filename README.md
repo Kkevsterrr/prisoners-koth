@@ -2,12 +2,18 @@
 An evolutaionary approach to an iterated prisoner's dilemma game. 
 
 # The Story
-Two criminals robbed a bank and are captured, but refuse to speak to the police. Each prisoner is put in a separate cell and is each told by the police that they had two options. They could choose to stay silent (cooperating with their partner), or they could defect on their partner and rat them out.  If they both stayed silent, they would each recieve 5 years in prison, and if they each ratted each other out, they would recieve 15 years in prison. But if one prisoner rats on the other while the other stayed silent, the snitch would go free while the silent prisoner would get 20 years.  These prison times are represented by a payoff matrix below, describing the total number of points each prisoner would recieve in each  
+Two criminals robbed a bank and are captured, but refuse to speak to the police. Each prisoner is put in a separate cell and is each told by the police that they had two options. They could choose to stay silent (cooperating with their partner), or they could defect on their partner and rat them out.  If they both stayed silent, they would each recieve 5 years in prison, and if they each ratted each other out, they would recieve 15 years in prison. But if one prisoner rats on the other while the other stayed silent, the snitch would go free while the silent prisoner would get 20 years.  
 
-| Prisoner1/Prisoner2 | Cooperate | Defect |
+These prison times are represented by the payoff matrix below, describing the total number of points each prisoner would recieve in each possible scenario. 
+
+| P1/P2 | Cooperate | Defect |
 | ------ | --------- |------ |
-| Cooperate | 1, 1 | 0, 5 |
-| Defect | 5,0 | 3,3 |
+| Cooperate | 3, 3 | 0, 5 |
+| Defect | 5,0 | 1,1 |
+
+As such, the best possible total outcome is if both players cooperate with one another, as they will recieve a total of 6 points, even though each player would only recieve three.  The best personal outcome is if you defect and the other prisoner cooperates - a total personal score of 5. The worst overall scenario is when both prisoners rat on each other, as each will only recieve a single point. 
+
+Therefore, there is an incentive to defect on the other prisoner, as it gaurantees the best possible personal score.  However, if both defect, each player will recieve the worst score. There is also an incentive for both to cooperate, as that gives the best total score, but if the other player defects, the cooperating prisoner is left with nothing.  
 
 # The Game
 Every player will write the strategy of a prisoner for a <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">prisoner's dilemma game</a>. You will decide if your prisoner is to cooperate or to defect. 
