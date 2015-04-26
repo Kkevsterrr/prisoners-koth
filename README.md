@@ -38,14 +38,14 @@ public class Prisoner_Base {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        //Read in the number of rounds to be played
-        int numRounds = scanner.nextInt();
+        int numRounds = scanner.nextInt(); //Read in the number of rounds to be played
         
         System.out.println("first_move_here");  // Should be "C" or "D"
+        
         for (int i = 1; i < numRounds; i++) {
             String prevMove = scanner.next();  // read in how your opponent played last round, "C" or "D"
-            // Your logic/strategy code here
-            System.out.println("move_here");  // Should be "C" or "D"
+                                               // Your logic/strategy code here
+            System.out.println("move_here");   // Should be "C" or "D"
         }
         scanner.close();
     }
