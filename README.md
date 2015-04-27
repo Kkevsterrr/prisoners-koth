@@ -1,6 +1,8 @@
 # Evolutionary Prisoners Dilemma
 An evolutaionary approach to an iterated <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">prisoner's dilemma game</a>.  This is a King of the Hill (KOTH) programming competition - the best algorithm will be the last man standing. 
 
+Authors: Ashton Webster, Philip Collison, and Kevin Bock
+
 ## The Story
 Two criminals robbed a bank and are captured, but refuse to speak to the police. Each prisoner is put in a separate cell and is each told by the police that they had two options. They could choose to stay silent (cooperating with their partner), or they could defect on their partner and rat them out.  If they both stayed silent, they would each recieve 5 years in prison, and if they each ratted each other out, they would recieve 15 years in prison. But if one prisoner rats on the other while the other stayed silent, the snitch would go free while the silent prisoner would get 20 years.  These prison times are only examples, but illustrate the general payoffs.
 
