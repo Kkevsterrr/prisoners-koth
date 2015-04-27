@@ -1,5 +1,5 @@
  [["Prisoners", "Cooperate", "Defect"],
  ["Round 1",  100, 100],
- ["Round 2",  75, 125],
+ ["Round 2",  125, 75],
  ["Round 3",  50, 150],
- ["Round 4",  0, 200]]
+ ["Round 4",  80, 120]]
