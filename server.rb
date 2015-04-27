@@ -4,15 +4,12 @@ require 'monitor'
 require 'thread'
 require 'timeout'
 
-$stdout.sync = true
-
-#changelog
-# AW - Added some slightly more helpful debug statements (round numbers).  Tested and working.
-# P - put on a show
-
-
 #TODO:
 # Send out invitation/spec to students
+
+$stdout.sync = true
+Thread.abort_on_exception = true
+
 INITIAL_COUNT_OF_EACH_PROGRAM = 20
 NUM_ROUNDS = 100
 PAYOFFS = {
@@ -23,7 +20,7 @@ PAYOFFS = {
 class_files = Dir["./prisoners/*.class"]
 programs = class_files.map { |file_path| /.*\/(.*).class/.match(file_path)[1] }
 population = programs * INITIAL_COUNT_OF_EACH_PROGRAM
-population.shuffle
+population.shuffle!
 
 
 1.times { puts }
@@ -55,7 +52,7 @@ gets
 sleep 0.7
 puts
 
-results = Hash.new
+results = Array.new
 mon = Monitor.new
 
 until population.uniq.one?
@@ -75,42 +72,51 @@ until population.uniq.one?
       begin
         Timeout.timeout(20) {
           # holy fuck processes are annoying
-          io_1 = IO.popen("java -cp prisoners/ #{p1}", "r+")
-          io_2 = IO.popen("java -cp prisoners/ #{p2}", "r+")
+          IO.popen("java -cp prisoners/ #{p1}", "r+") { |io_1|
+            IO.popen("java -cp prisoners/ #{p2}", "r+") { |io_2|
 
-          io_1.puts NUM_ROUNDS
-          io_2.puts NUM_ROUNDS
+              io_1.puts NUM_ROUNDS
+              io_2.puts NUM_ROUNDS
 
-          move = [io_1.gets, io_2.gets]
-          payoff_1, payoff_2 = PAYOFFS[move]
-          p1_score += payoff_1
-          p2_score += payoff_2
+              move = [io_1.gets, io_2.gets]
+              payoff_1, payoff_2 = PAYOFFS[move]
+              p1_score += payoff_1
+              p2_score += payoff_2
 
-          (NUM_ROUNDS - 1).times {
-            io_1.puts move[1]
-            io_2.puts move[0]
+              (NUM_ROUNDS - 1).times {
+                io_1.puts move[1]
+                io_2.puts move[0]
 
-            move = [io_1.gets, io_2.gets]
-            payoff_1, payoff_2 = PAYOFFS[move]
-            p1_score += payoff_1
-            p2_score += payoff_2
+                move = [io_1.gets, io_2.gets]
+                payoff_1, payoff_2 = PAYOFFS[move]
+                p1_score += payoff_1
+                p2_score += payoff_2
+              }
+            }
           }
         }
-
+        
         mon.synchronize {
           scores[p1] += p1_score
           scores[p2] += p2_score
-        }
+        }   
       rescue Timeout::Error
         puts "A program, either #{p1} or #{p2}, timed out"
       end
     }
   }.each { |t| t.join }
 
+  results << { :population => population, :scores => scores }
+
+  puts results.last[:scores].sort_by { |p,l| -l }.map { |p,l| "{#{p} #{l}}" }.join(" ")
+  proportions = population.group_by { |p| p }.merge(scores) { |p, arr, scrs| scrs.fdiv(arr.length) }
+  puts proportions.sort_by { |p,l| -l }.map { |p,l| "<#{p} #{(l*100).round.fdiv(100).to_s}>" }.join(" ")
+
   candidates = scores.inject([]) { |memo, (p, n)| memo + Array.new(n, p) }
   population = candidates.shuffle.take(population.length)
-  results[population] = scores
 
+  puts
+  puts
   puts
 end
 
