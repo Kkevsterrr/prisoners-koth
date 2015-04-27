@@ -71,7 +71,7 @@ $ git checkout gh-pages
 
       function drawChart() {
         xhr = new XMLHttpRequest();
-            xhr.open('GET', 'poptest.json', true);
+            xhr.open('GET', 'files/data.json', true);
             xhr.onreadystatechange = function(e) {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
