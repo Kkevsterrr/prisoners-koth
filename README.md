@@ -70,5 +70,5 @@ Since it's more than likely that your prisoner will face off against a copy of i
 Prisoners will first few games of the 100 played to determine what strategy their opponent is using to best exploit it. As such, changing your strategy randomly, or in accordance with what you think the opponent's strategy is will be in your best interest.
 
 # Submissions
-To submit, send your file to: *emailTBD*
+To submit, send your .java file to: *kothsubmissions@gmail.com*
 
