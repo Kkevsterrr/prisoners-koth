@@ -1,5 +1,5 @@
 # Evolutionary Prisoners Dilemma
-An evolutaionary approach to an iterated <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">prisoner's dilemma game</a>.  This is a King of the Hill (KOTH) programming competition - the best algorithm will be the last man standing. 
+An evolutionary approach to an iterated <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">prisoner's dilemma game</a>.  This is a King of the Hill (KOTH) programming competition - the best algorithm will be the last man standing. 
 
 Authors: Ashton Webster, Philip Collison, and Kevin Bock
 
